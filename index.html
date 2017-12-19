@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Space</title>
+  <script src="assets/js/storage.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+<body>
+  <div id="container">
+    <header>
+      <span id="title">IT'S A LIST!</span>
+      <div class="listTools">
+        <button onclick="clearList()"><i class="fa fa-eraser" aria-hidden="true"></i></button>
+        <button onclick="saveList()"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+        <button id ="addButton" onclick="addItem()">+</button>
+      </div>
+    </header>
+    <main>
+      <!-- <ul id="list" class="sortable"> -->
+      <ul id="list">
+      </ul>
+    </main>
+    <footer>
+    </footer>
+  </div>
+  <div id="result"></div>
+  <li class="item-template">
+    <div class="grabber" onclick="makeListSortable()"><i class="fa fa-grip" aria-hidden="true"></i></div>
+    <div class="details">Click to edit...</div>
+    <div class="trash-item" onclick="trashItem(this.closest('.item'))"><i class="fa fa-trash" aria-hidden="true"></i></div>
+    <div class="edit-item" onclick="makeItemEditable(this)"><i class="fa fa-edit" aria-hidden="true"></i></div>
+  </li>
+  <script src="https://use.fontawesome.com/a285db6a94.js"></script>
+  <script src="assets/js/lib/jquery-3.2.1.js" type="text/javascript"></script> 
+  <script src="assets/js/lib/jquery-ui.min.js" type="text/javascript"></script> 
+  <script src="assets/js/todo.js"></script>
+  <script>$(".sortable").sortable();</script>
+</body>
+</html>

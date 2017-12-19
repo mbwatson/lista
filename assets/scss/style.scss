@@ -1,0 +1,126 @@
+$light-gray: #ccc;
+
+html {
+  height: 100%
+}
+body {
+  padding: 1em;
+  margin: 0;
+  font-family: "Ubuntu", "Lucida Sans Unicode", Tahoma, sans-serif;
+  font-size: 16pt;
+  height: 100%;
+}
+#container {
+  background-color: $light-gray;
+  width: 600px;
+  // height: 100%;
+  // min-height: 100%;
+  margin: auto;
+  padding: 2px;
+  // * { border: 1px solid #999; } // borders for visual debugging
+}
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  padding: 0.75em 1em 0.75em 3em;
+  border-bottom: 3px solid $light-gray;
+  #title {
+    font-size: 200%;
+    font-weight: bold;
+    flex-grow: 1;
+    font-variant: small-caps;
+  }
+  .listTools {
+    padding: 0.25em;
+    text-align: right;
+    background-color: #fff;
+    button {
+      border: 0;
+      background-color: transparent;
+      color: #000;
+      font-size: 150%;
+      cursor: pointer;
+      opacity: 0.33;
+      transition: opacity 500ms ease;
+    }
+    #addButton {
+      background-color: #000;
+      color: #fff;
+      padding: 0 0.25em;
+      border-radius: 50%;
+    }
+    button:hover {
+      opacity: 1;
+    }
+  }
+}
+main #list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $light-gray;
+  li {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: #fff;
+    font-size: 120%;
+    padding: 0;
+    border-bottom: 2px dotted $light-gray;
+    .grabber {
+      display: inline;
+      cursor: move;
+      margin: auto;
+      padding-left: 1em;
+      opacity: 0.05;
+      transition: opacity 500ms ease;
+    }
+    .details {
+      display: inline;
+      padding: 1em 1em;
+      line-height: 20px;
+      flex-grow: 1;
+      font-weight: bold;
+      color: #999;
+    }
+    .editing {
+      color: #000;
+      font-style: italic;
+    }
+    .trash-item, .edit-item {
+      margin: auto;
+      padding: 10px;
+      cursor: pointer;
+      color: #000;
+      opacity: 0;
+      transition: opacity 500ms ease, color 500ms ease;
+    }
+  }
+  li:hover {
+    .trash-item, .edit-item {
+      opacity: 0.5;
+    }
+    .trash-item:hover {
+      color: #f00;
+    }
+    .edit-item:hover {
+      color: #0cc;
+    }
+    .grabber {
+      opacity: 0.2;
+    }
+  }
+}
+footer {
+  background-color: #fff;
+  height: 1em;
+}
+.item-template {
+  display: none;
+}
+
+.fa.fa-grip:before {
+  content: "\f142 \202F \f142";
+}
