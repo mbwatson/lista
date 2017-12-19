@@ -37,11 +37,6 @@ header {
       cursor: pointer;
       opacity: 0.33;
       transition: opacity 500ms ease; }
-    header .listTools #addButton {
-      background-color: #000;
-      color: #fff;
-      padding: 0 0.25em;
-      border-radius: 50%; }
     header .listTools button:hover {
       opacity: 1; }
 
@@ -93,8 +88,17 @@ main #list {
     opacity: 0.2; }
 
 footer {
-  background-color: #fff;
-  height: 1em; }
+  height: 1em;
+  background-color: #fff; }
+
+#howto {
+  display: none; }
+  #howto ul {
+    margin: 0;
+    padding: 0 1em;
+    list-style-type: none; }
+    #howto ul li {
+      color: #ccc; }
 
 .item-template {
   display: none; }

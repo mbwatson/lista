@@ -13,8 +13,6 @@ body {
 #container {
   background-color: $light-gray;
   width: 600px;
-  // height: 100%;
-  // min-height: 100%;
   margin: auto;
   padding: 2px;
   // * { border: 1px solid #999; } // borders for visual debugging
@@ -43,12 +41,6 @@ header {
       cursor: pointer;
       opacity: 0.33;
       transition: opacity 500ms ease;
-    }
-    #addButton {
-      background-color: #000;
-      color: #fff;
-      padding: 0 0.25em;
-      border-radius: 50%;
     }
     button:hover {
       opacity: 1;
@@ -114,8 +106,19 @@ main #list {
   }
 }
 footer {
-  background-color: #fff;
   height: 1em;
+  background-color: #fff;
+}
+#howto {
+  display: none;
+  ul {
+    margin: 0;
+    padding: 0 1em;
+    list-style-type: none;
+    li {
+      color: $light-gray;
+    }
+  }
 }
 .item-template {
   display: none;
