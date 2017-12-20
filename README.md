@@ -8,6 +8,5 @@ This To-Do List uses jQuery and HTML5 localStorage to preserve list information.
 
 ## Feature Ideas
 
-* Draggable/sortable list items
-* Create and save multiple lists
 * Notifications for Save, Delete (Undo option?)
+* Create and save multiple lists
