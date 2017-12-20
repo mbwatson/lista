@@ -26,10 +26,12 @@
   </div>
   <div id="result"></div>
   <li class="item-template">
-    <div class="grabber" onclick="makeListSortable()"><i class="fa fa-grip" aria-hidden="true"></i></div>
-    <div class="details">Click to edit...</div>
-    <div class="trash-item" onclick="trashItem(this.closest('.item'))"><i class="fa fa-trash" aria-hidden="true"></i></div>
-    <div class="edit-item" onclick="makeItemEditable(this)"><i class="fa fa-edit" aria-hidden="true"></i></div>
+    <div class="item-grabber"><i class="fa fa-grip" aria-hidden="true"></i></div>
+    <div class="item-details">Click to edit...</div>
+    <div class="item-menu">
+      <button class="trash-item" onclick="trashItem(this.closest('.item'))"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      <button class="edit-item" onclick="makeItemEditable(this.closest('.item'))"><i class="fa fa-edit" aria-hidden="true"></i></button>
+    </div>
   </li>
   <div id="howto">
     <ul>
