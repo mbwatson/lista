@@ -19,10 +19,7 @@ let sampleListItems = [
 ]
 $(function() {
 	$ITEM_TEMPLATE = $('.item-template');
-	$LIST = $('#list');
-	$LIST.on('focusout', function() {
-    $(this).find('.details').removeAttr('contenteditable').removeClass('editing');
-  })
+	$LIST = $('#list'); // Save for future item appendation
 	let items = retrieveSavedListItems();
 	for (let id in items) {
 		addItem(id, items[id]);
@@ -35,7 +32,7 @@ function addItem(itemID = generateId(), itemText = randomListItem()) {
 		.appendTo($LIST);
 	$('.item').last()
 						.attr('id', itemID)
-						.find('.details').text(itemText);
+						.find('.item-details').text(itemText);
 }
 
 function generateId(length = 8) {
@@ -55,9 +52,15 @@ function retrieveSavedListItems() {
 }
 
 function makeItemEditable(el) {
-	let $itemDetails = $(el).siblings('.details');
-	$itemDetails.attr('contenteditable', 'true').addClass('editing');
-	$itemDetails.trigger('focus');
+	let $itemDetails = $(el).closest('.item').find('.item-details');
+	console.log($itemDetails);
+	$itemDetails.addClass('editing')
+		.attr('contenteditable', 'true')
+		.trigger('focus')
+		.on('focusout', function() {
+    $(this).removeClass('editing')
+    			 .removeAttr('contenteditable');
+  })
 }
 
 // function makeListSortable() {
@@ -69,7 +72,7 @@ function saveList() {
 	let listItems = {};
 	$('.item').each(function() {
 		$item = $(this);
-		details = $item.find('.details').text();
+		details = $item.find('.item-details').text();
 		listItems[$item.attr('id')] = details;
 	});
 	localStorage.setItem('todoList', JSON.stringify(listItems));
