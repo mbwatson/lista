@@ -127,3 +127,14 @@ footer {
 .fa.fa-grip:before {
   content: "\f142 \202F \f142";
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+  #container {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
