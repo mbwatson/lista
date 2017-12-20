@@ -9,6 +9,13 @@ let sampleListItems = [
 	'Clean the house',
 	'Wash the car',
 	'Mow the lawn',
+	'Write a song',
+	'Draw a picture',
+	'Go for a walk',
+	'Stretch',
+	'Meditate',
+	'Solve the world\'s problems',
+	'Go see a movie',
 ]
 $(function() {
 	$ITEM_TEMPLATE = $('.item-template');
@@ -17,7 +24,6 @@ $(function() {
     $(this).find('.details').removeAttr('contenteditable').removeClass('editing');
   })
 	let items = retrieveSavedListItems();
-	console.log(items);
 	for (let id in items) {
 		addItem(id, items[id]);
 	}

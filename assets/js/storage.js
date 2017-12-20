@@ -22,13 +22,7 @@ function storageAvailable(type) {
     }
 }
 if (storageAvailable('localStorage')) {
-	console.log('Nice! Local storage is available!')
+	console.log('Local storage is available!')
 } else {
 	console.log('Sorry, local storage is unavailable!')
 }
-function populateStorage() {
-	localStorage.setItem('colors', {'0': '#123def', '1': '#666690', '2': '#ccaaee'});
-}
-populateStorage()
-colors = localStorage.getItem('colors');
-console.log(colors)
