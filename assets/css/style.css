@@ -106,12 +106,18 @@ footer {
 .fa.fa-grip:before {
   content: "\f142 \202F \f142"; }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   body {
     padding: 0; }
 
   #container {
-    width: 100%;
-    font-size: 12px; } }
+    width: 100%; }
+    #container header {
+      flex-direction: column;
+      padding: 0; }
+      #container header #title {
+        text-align: center; }
+      #container header .listTools {
+        text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */

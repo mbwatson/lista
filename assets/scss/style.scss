@@ -128,13 +128,22 @@ footer {
   content: "\f142 \202F \f142";
 }
 
-@media (max-width: 478px) {
+@media (max-width: 640px) {
   body {
     padding: 0;
   }
   #container {
     width: 100%;
-    font-size: 12px;
+    header {
+      flex-direction: column;
+      padding: 0;
+      #title {
+        text-align: center;
+      }
+      .listTools {
+        text-align: center;
+      }
+    }
   }
 }
 
