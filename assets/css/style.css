@@ -4,7 +4,8 @@
   --save-list-color: #6d6;
   --add-item-color: #5ae;
   --trash-item-color: #f00;
-  --edit-item-color: #0cc; }
+  --edit-item-color: #0cc;
+  --footnote-color: #ccc; }
 
 body {
   padding: 1em;
@@ -124,11 +125,22 @@ footer {
 .fa.fa-grip:before {
   content: "\f142 \202F \f142"; }
 
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  font-size: 10pt;
+  text-align: center;
+  color: var(--footnote-color); }
+  footer a {
+    color: #bbc; }
+
 @media (max-width: 640px) {
   body {
     padding: 0; }
 
   #container {
+    padding: 0;
     width: 100%; }
     #container header {
       flex-direction: column;
@@ -136,6 +148,9 @@ footer {
       #container header #title {
         text-align: center; }
       #container header .listTools {
-        text-align: center; } }
+        text-align: center; }
+
+  footer {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
