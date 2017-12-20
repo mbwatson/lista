@@ -19,7 +19,7 @@ body {
   width: 600px;
   margin: auto;
   padding: 2px;
-  * { border: 1px solid #999; } // borders for visual debugging
+  // * { border: 1px solid #999; } // borders for visual debugging
 }
 header {
   display: flex;
@@ -74,7 +74,7 @@ main #list {
     font-size: 120%;
     padding: 0;
     border-bottom: 2px dotted var(--light-gray);
-    .grabber {
+    .item-grabber {
       display: inline;
       cursor: move;
       margin: auto;
@@ -82,11 +82,11 @@ main #list {
       opacity: 0.05;
       transition: opacity 500ms ease;
     }
-    .details {
+    .item-details {
+      flex-grow: 1;
       display: inline;
       padding: 1em 1em;
       line-height: 20px;
-      flex-grow: 1;
       font-weight: bold;
       color: #999;
     }
@@ -94,26 +94,35 @@ main #list {
       color: #000;
       font-style: italic;
     }
-    .trash-item, .edit-item {
-      margin: auto;
-      padding: 10px;
-      cursor: pointer;
-      color: #000;
+    .item-menu {
+      visibility: hidden;
+      padding-top: 0.25em;
       opacity: 0;
-      transition: opacity 500ms ease, color 500ms ease;
+      transition: opacity 500ms ease, visibility 500ms ease, color 500ms ease;
+      .trash-item, .edit-item {
+        border: 0;
+        font-size: 125%;
+        background-color: transparent;
+        margin-top: auto;
+        padding: 10px;
+        cursor: pointer;
+        color: #000;
+        transition: color 500ms ease;
+      }
     }
   }
   li:hover {
-    .trash-item, .edit-item {
+    .item-menu {
+      visibility: visible;
       opacity: 0.5;
+      .trash-item:hover {
+        color: var(--trash-item-color);
+      }
+      .edit-item:hover {
+        color: var(--edit-item-color);
+      }
     }
-    .trash-item:hover {
-      color: var(--trash-item-color);
-    }
-    .edit-item:hover {
-      color: var(--edit-item-color);
-    }
-    .grabber {
+    .item-grabber {
       opacity: 0.2;
     }
   }
