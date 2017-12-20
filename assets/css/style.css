@@ -106,7 +106,7 @@ footer {
 .fa.fa-grip:before {
   content: "\f142 \202F \f142"; }
 
-@media (max-device-width: 640px) {
+@media (max-width: 640px) {
   body {
     padding: 0; }
 
