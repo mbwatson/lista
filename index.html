@@ -11,13 +11,14 @@
     <header>
       <div id="title">IT'S A LIST!</div>
       <div class="listTools">
+        <button class="lock-list"><i class="fa fa-lock" aria-hidden="true"></i></button>
         <button class="clear-list" onclick="clearList()"><i class="fa fa-eraser" aria-hidden="true"></i></button>
         <button class="save-list" onclick="saveList()"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
         <button class="add-item" onclick="addItem()"><i class="fa fa-plus-circle"></i></button>
       </div>
     </header>
     <main>
-      <ul id="list">
+      <ul id="list" class="sortable">
       </ul>
     </main>
     <footer>
@@ -25,7 +26,7 @@
   </div>
   <div id="result"></div>
   <li class="item-template">
-    <div class="item-grabber"><i class="fa fa-grip" aria-hidden="true"></i></div>
+    <div class="item-grabber handle"><i class="fa fa-grip" aria-hidden="true"></i></div>
     <div class="item-details">Click to edit...</div>
     <div class="item-menu">
       <button class="trash-item" onclick="trashItem(this.closest('.item'))"><i class="fa fa-trash" aria-hidden="true"></i></button>

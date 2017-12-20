@@ -20,6 +20,10 @@ let sampleListItems = [
 $(function() {
 	$ITEM_TEMPLATE = $('.item-template');
 	$LIST = $('#list'); // Save for future item appendation
+	$LIST.sortable({
+	  handle: ".item-grabber", // classname of item grabber
+	  revert: true // glide into position when released
+	});
 	let items = retrieveSavedListItems();
 	for (let id in items) {
 		addItem(id, items[id]);
@@ -62,11 +66,6 @@ function makeItemEditable(el) {
     			 .removeAttr('contenteditable');
   })
 }
-
-// function makeListSortable() {
-// 	$LIST.addClass('sortable');
-// 	$(".sortable").sortable();
-// }
 
 function saveList() {
 	let listItems = {};
