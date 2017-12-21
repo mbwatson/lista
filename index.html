@@ -11,6 +11,7 @@
     <header>
       <div id="title">IT'S A LIST!</div>
       <div class="listTools">
+        <button class="refresh-list" onclick="location.reload()"><i class="fa fa-undo" aria-hidden="true"></i></button>
         <button class="clear-list" onclick="clearList()"><i class="fa fa-eraser" aria-hidden="true"></i></button>
         <button class="save-list" onclick="saveList()"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
         <button class="add-item" onclick="addItem()"><i class="fa fa-plus-circle"></i></button>
@@ -20,6 +21,7 @@
       <ul id="list" class="sortable">
       </ul>
     </main>
+    <div class="bottom"></div>
   </div>
   <footer>
     <p>Created with determination by <a href="https://mbwatson.github.io/me" target="_blank">Matt Watson</a>.</p>
@@ -30,7 +32,7 @@
     <div class="item-details">Click to edit...</div>
     <div class="item-menu">
       <button class="trash-item" onclick="trashItem(this.closest('.item'))"><i class="fa fa-trash" aria-hidden="true"></i></button>
-      <button class="edit-item" onclick="makeItemEditable(this.closest('.item'))"><i class="fa fa-edit" aria-hidden="true"></i></button>
+      <button class="edit-item" onclick="makeItemEditable(this.closest('.item'))"><i class="fa fa-pencil" aria-hidden="true"></i></button>
     </div>
   </li>
   <div id="howto">
